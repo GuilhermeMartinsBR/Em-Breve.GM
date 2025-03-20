@@ -242,7 +242,7 @@
       <div class="animated-bg" id="animated-bg"></div>
       <main>
         <div class="logo" data-aos="zoom-in" data-aos-duration="2000">
-          <img src="src/img/APENAS-O-DESENHO/a8007ea0cd5240479a822ce322a97dda.jpg" alt="Guilherme Martins" />
+          <img src="src/img/Screenshots_2021-09-02-23-42-06 (1).jpg" alt="Guilherme Martins Logo" />
           <h1>Guilherme <span>Martins</span></h1>
         </div>
         
@@ -318,11 +318,12 @@
         }
       });
       
-      // Configurar contador regressivo
+      // Configurar contador regressivo para amanhã
       const countdown = () => {
-        // Data alvo: 30 dias a partir de agora
-        const targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + 30);
+        // Data alvo: amanhã às 00:00
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        tomorrow.setHours(0, 0, 0, 0);
         
         const daysElement = document.getElementById('days');
         const hoursElement = document.getElementById('hours');
@@ -331,7 +332,7 @@
         
         function updateCountdown() {
           const currentDate = new Date();
-          const difference = targetDate - currentDate;
+          const difference = tomorrow - currentDate;
           
           const days = Math.floor(difference / (1000 * 60 * 60 * 24));
           const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
